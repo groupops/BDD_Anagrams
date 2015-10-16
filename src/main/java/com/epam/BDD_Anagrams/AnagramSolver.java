@@ -1,6 +1,7 @@
 package com.epam.BDD_Anagrams;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AnagramSolver {
@@ -9,20 +10,38 @@ public class AnagramSolver {
   private List<String> anagrams;
   private String word;
 
-  public AnagramSolver(){
+  public AnagramSolver() {
     fileWordDictionary = new FileWordDictionary();
   }
 
-  public void searchAllAnagramsFor(String word){
-    anagrams = new LinkedList<>();
-    anagrams.add("crepitus");
-    anagrams.add("cuprites");
-    anagrams.add("pictures");
-    anagrams.add("piecrust");
+  public void searchAllAnagramsFor(String word) {
+    anagrams = new ArrayList<>();
+    findAllAnagrams(word);
+    Collections.sort(anagrams);
   }
 
-  public List<String> getAllAnagrams(){
+  public void findAllAnagrams(String word) {
+    doAnagrams("", word);
+  }
 
+  private void doAnagrams(String prefix, String word) {
+    if (word.length() == 0) {
+      addIfInDictionary(prefix);
+    } else {
+      for (int i = 0; i < word.length(); i++) {
+        doAnagrams(prefix + word.charAt(i),
+            word.substring(0, i) + word.substring(i + 1));
+      }
+    }
+  }
+
+  private void addIfInDictionary(String word) {
+    if (fileWordDictionary.containsWord(word)) {
+      anagrams.add(word);
+    }
+  }
+
+  public List<String> getAllAnagrams() {
     return anagrams;
   }
 

@@ -1,4 +1,4 @@
-package com.epam.BDD_Anagrams.support;
+package com.epam.BDD_Anagrams.configuration;
 
 import org.jbehave.core.ConfigurableEmbedder;
 import org.jbehave.core.configuration.Configuration;

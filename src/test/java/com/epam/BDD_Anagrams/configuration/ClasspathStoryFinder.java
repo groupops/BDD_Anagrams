@@ -1,4 +1,4 @@
-package com.epam.BDD_Anagrams.support;
+package com.epam.BDD_Anagrams.configuration;
 
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.WildcardFileFilter;

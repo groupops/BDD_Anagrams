@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static com.epam.BDD_Anagrams.support.BehaviouralTestEmbedder.aBehaviouralTestRunner;
+import static com.epam.BDD_Anagrams.configuration.BehaviouralTestEmbedder.aBehaviouralTestRunner;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -20,7 +20,7 @@ public class AnagramSolverTest {
   }
 
   @Test
-  public void toAccountTest() throws Exception {
+  public void anagramSolverStory() throws Exception {
     aBehaviouralTestRunner().usingStepsFrom(this)
         .withStory("anagram_solver.story").run();
   }

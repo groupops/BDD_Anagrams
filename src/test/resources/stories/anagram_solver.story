@@ -12,5 +12,10 @@ Then the anagrams: is shown
 
 Scenario: Getting the set of anagrams for given word
 Given that I am using Anagram program
-When I search all anagrams for the word "pictures"
+When I search all anagrams for the word pictures
 Then the anagrams: crepitus, cuprites, pictures, piecrust are shown
+
+Scenario: Getting the set of anagrams for given word
+Given that I am using Anagram program
+When I search all anagrams for the word paste
+Then the anagrams: paste, pates, peats, septa, spate, tapes, tepas are shown
